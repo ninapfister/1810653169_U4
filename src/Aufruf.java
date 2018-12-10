@@ -27,5 +27,19 @@ public class Aufruf
             System.out.println(item.getTitle()+ " hat " + item.getPages()+ " Seiten und folgende ISBN: " + item.getIsbn()); // gibt den Text aus
         }
 
+
+        // Aufgabe 5
+
+        List<Paperbook> paperbookListe= new ArrayList<Paperbook>(); // eine Liste erstellen, Konstrukutor für Tabelle
+        paperbookListe.add(new Paperbook (200, released, "My Paperbook 1", "00000-00000-00000", "April", "0")); // auf die Liste zugreifen, mit . etwas genauer bestimmen, Methode, add
+        paperbookListe.add(new Paperbook (210, released, "My Paperbook 2", "00000-00000-00000", "April", "0")); // month und series dazuschreiben
+        paperbookListe.add(new Paperbook (240, released, "My Paperbook 3", "00000-00000-00000", "January", "0"));
+        paperbookListe.add(new Paperbook (100, released , "My Paperbook 4", "00000-00000-00000", "March", "0"));
+        paperbookListe.add(new Paperbook (140, released, "My Paperbook 5", "00000-00000-00000", "October", "0"));
+
+        for (Paperbook item:paperbookListe) // for-each-Schleife weil in Klammer :, läuft solange wie ich Instanzen in meiner Liste habe, hier 5mal
+        {
+            System.out.println(item.getTitle()+ " hat " + item.getPages()+ " Seiten und folgende ISBN: " + item.getIsbn() + " zusätzlich ist es im Monat " + item.getMonth() + " erschienen"); // gibt den Text aus, series wird nicht verlangt
+        }
     }
 }
