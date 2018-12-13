@@ -7,23 +7,23 @@ public class Aufruf
     public static void main (String []args) // Aufgabe 3
     {
         Date released = new Date (); // weil ich immer das aktuelle Datum möchte, wenn ich ein bestimmtes will, kann ich einfach das gewünschte Datum in die Klammer schreiben
-        Book myBook = new Book (200,released, "My Book", "isbn" );
+        Book myBook = new Book (200,released, "My Book", "isbn" ); // instanzieren, mit new Konstrukutor aufrufen
 
         System.out.println("Das Buch hat " + myBook.getPages()+ " Seiten, wurde am " + myBook.getReleased() + " veröffentlicht und hat den Titel " + myBook.getTitle());
         // mit myBook greife ich auf das Buch/Instanz zu, mit .getPages spreche ich die Methode an, man übernimmt die zuvor übergebenen Werte
 
 
-        // Aufgabe 4
+        // Aufgabe 4,  oder jedes Buch einzeln anlegen z.B. Book b2 = new Book (die Werte die ich ausgeben möchte), dann z.B. listA.add(b2) für alle einzeln machen
 
-        List<Book> eineListe= new ArrayList<Book>(); // eine Liste erstellen, Konstrukutor für Tabelle
+        List<Book> eineListe= new ArrayList<Book>(); // eine Liste erstellen, Konstrukutor für Tabelle, ArrayListe Reihenfolge einhalten
         eineListe.add(new Book (200, released, "My Book 1", "125215-12521-73473")); // auf die Liste zugreifen, mit . etwas genauer bestimmen, Methode, add
-        eineListe.add(new Book (200, released, "My Book 2", "6437-623623-24254"));
+        eineListe.add(new Book (200, released, "My Book 2", "6437-623623-24254")); // add fügt Element/ArrayList ein, hintereinander gespeichert, immer an letzte Stelle
         eineListe.add(new Book (200, released, "My Book 3", "26326-734737-732473"));
         eineListe.add(new Book (200, released , "My Book 4", "745854-124412-3487438348"));
         eineListe.add(new Book (200, released, "My Book 5", "672-5236236-123483475125"));
 
-        for (Book item:eineListe) // for-each-Schleife weil in Klammer :, läuft solange wie ich Instanzen in meiner Liste habe, hier 5mal
-        {
+        for (Book item:eineListe) // for-each-Schleife (für jeden) weil in Klammer :, läuft solange wie ich Instanzen in meiner Liste habe, hier 5mal, item holt sich z.B. Titel der Reihe nach, Ausgabe weiß worauf es sich bezieht, Liste durchiterieren
+        { // macht einmal book item, holt sich aus jeder Zeile raus, und wiederholt es
             System.out.println(item.getTitle()+ " hat " + item.getPages()+ " Seiten und folgende ISBN: " + item.getIsbn()); // gibt den Text aus
         }
 
